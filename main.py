@@ -2,7 +2,7 @@ import torch
 
 from PIL import Image, ImageDraw, ImageFont
 from model.myrdn import ResidualDenseNet as RDN
-from model.rdn import RDN as customRDN
+from torchvision.utils import save_image
 import numpy as np
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -93,7 +93,7 @@ def visualize_sr(img, halve=False):
 
     # Display grid
     grid_img.show()
-    
+    grid_img.save('x.png')
     
     return grid_img
 
